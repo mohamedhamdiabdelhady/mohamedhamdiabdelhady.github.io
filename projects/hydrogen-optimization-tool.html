@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrogen Storage Optimization Tool - Mohamed Hamdi</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .back-link {
+            margin: 30px 0;
+        }
+        
+        .back-link a {
+            color: #28a745;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-link a:hover {
+            color: #1e3c72;
+        }
+        
+        .project {
+            background: white;
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .project-header {
+            margin-bottom: 40px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+        }
+        
+        .project-title {
+            font-size: 2.2rem;
+            color: #1e3c72;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+        
+        .project-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .project-content p {
+            margin-bottom: 25px;
+        }
+        
+        .project-content h3 {
+            color: #1e3c72;
+            font-size: 1.3rem;
+            margin: 35px 0 20px 0;
+        }
+        
+        .project-content ul {
+            margin: 20px 0 25px 25px;
+        }
+        
+        .project-content li {
+            margin-bottom: 8px;
+        }
+        
+        .project-image {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .project-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-image-placeholder {
+            background: #f8f9fa;
+            border: 2px dashed #ddd;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .project {
+                padding: 40px 25px;
+            }
+            
+            .project-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-link">
+            <a href="../personal-projects.html">← Back to Projects</a>
+        </div>
+        
+		<article class="project">
+			<header class="project-header">
+				<h1 class="project-title">Integrated Hydrogen-Ammonia Production Optimization</h1>
+			</header>
+			
+			<div class="project-content">
+				<p>This optimization framework grew out of a practical challenge I encountered while analyzing industrial hydrogen applications. As I worked through the mathematics of hydrogen production systems, it became clear that most existing models treated hydrogen and ammonia production as separate problems, missing crucial interdependencies that could unlock significant economic and environmental benefits.</p>
+				
+				<div class="project-image">
+					<img src="https://imgur.com/GRTJjAf.png" alt="Optimization Dashboard - Production Profiles and Storage Dynamics" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+				</div>
+				
+				<h3>The Industrial Reality</h3>
+				
+				<p>Hydrogen and ammonia production are intrinsically linked in industrial settings. Ammonia synthesis requires hydrogen as a feedstock, typically at a 3:1 stoichiometric ratio with nitrogen. Yet traditional optimization approaches handle these as separate systems, leading to suboptimal scheduling decisions and missed opportunities for energy arbitrage.</p>
+				
+				<p>My analysis revealed that the temporal coupling between these systems - how hydrogen storage levels affect ammonia production scheduling, and how renewable energy availability influences both processes - creates optimization opportunities that can significantly reduce costs and emissions.</p>
+				
+				<h3>Technical Architecture</h3>
+				
+				<p>The optimization framework models both systems as an integrated network with shared resources and constraints:</p>
+				
+				<ul>
+					<li><strong>Hydrogen System:</strong> Multiple electrolysis units with variable efficiency curves, storage dynamics, and dual output streams (spot market and ammonia feedstock)</li>
+					<li><strong>Ammonia System:</strong> Haber-Bosch process modeling with realistic minimum turndown ratios and startup/shutdown costs</li>
+					<li><strong>Shared Resources:</strong> Renewable energy allocation, grid power limits, and carbon emission constraints across both systems</li>
+					<li><strong>Market Integration:</strong> Spot market participation for hydrogen with demand uncertainty and delivery requirements for ammonia</li>
+				</ul>
+				
+				<p>The mathematical formulation uses mixed-integer linear programming to handle binary decisions (unit startup/shutdown) while optimizing continuous variables like production rates and storage levels across hourly time intervals.</p>
+				
+				<h3>Handling System Interdependencies</h3>
+				
+				<p>The most challenging aspect was modeling the interdependencies correctly. The stoichiometric constraint linking hydrogen consumption to ammonia production creates a scheduling problem where decisions in one system cascade through the other. This is particularly complex when renewable energy availability is variable and both systems compete for the same power resources.</p>
+				
+				<p>The framework addresses this through coupled constraints that ensure hydrogen availability for ammonia production while maintaining flexibility for spot market sales. The optimization reveals scenarios where it's economically beneficial to curtail ammonia production to capture high-value hydrogen spot market opportunities.</p>
+				
+				<div class="code-snippet">
+	# Key constraint linking H2 and NH3 systems
+	def h2_nh3_stoichiometry_rule(model, t):
+		return model.h2_to_nh3[t] == model.h2_to_nh3_ratio * model.nh3_prod[t]
+				</div>
+				
+				<h3>Emissions-Constrained Operation</h3>
+				
+				<p>One of the framework's most valuable features is its treatment of carbon emissions as a constrained resource. Rather than simply minimizing emissions, it optimizes system performance within emission budgets, revealing how carbon constraints reshape optimal operating strategies.</p>
+				
+				<p>This approach uncovered some counterintuitive findings. Under tight emission constraints, the optimal strategy often involves running hydrogen production at higher intensities during low-carbon grid periods, even if this requires additional storage costs. The emissions constraint fundamentally changes the value proposition of storage systems.</p>
+				
+				<div class="project-image">
+					<div class="project-image-placeholder">
+						[System Flow Diagram - H2/NH3 Integration with RE and Grid Power]
+					</div>
+				</div>
+				
+				<h3>Real-World Performance Insights</h3>
+				
+				<p>Running the optimization across different scenarios has revealed several insights that challenge conventional wisdom about hydrogen and ammonia production:</p>
+				
+				<p>First, the value of hydrogen storage increases dramatically when you account for ammonia production flexibility. The ability to decouple hydrogen production from ammonia synthesis timing creates arbitrage opportunities that single-system analyses miss entirely.</p>
+				
+				<p>Second, renewable energy integration performs better than expected when both systems can share the resource. The diversity of demand patterns between hydrogen (more flexible) and ammonia (more constrained by process requirements) improves overall renewable utilization rates.</p>
+				
+				<h3>Key Technical Insights</h3>
+				
+				<p>Working through this integrated optimization has generated several findings that have broader implications for industrial hydrogen applications:</p>
+				
+				<ul>
+					<li>Storage system sizing requires analyzing both systems simultaneously - hydrogen storage needs are driven as much by ammonia production patterns as by spot market opportunities</li>
+					<li>Emission constraints create unexpected interdependencies between the systems that can either enhance or limit operational flexibility</li>
+					<li>Renewable energy curtailment rates drop significantly when both systems can compete for available power</li>
+					<li>The economic value of demand response participation changes when you consider both systems together</li>
+				</ul>
+				
+				<h3>Computational Challenges</h3>
+				
+				<p>The computational complexity of this integrated approach required careful attention to model structure. The original formulation with full temporal coupling was computationally intractable for realistic time horizons. I had to develop decomposition strategies that maintain solution quality while achieving reasonable solve times.</p>
+				
+				<p>The breakthrough came from recognizing that certain constraints could be aggregated at daily levels while maintaining hourly resolution for operational decisions. This reduced the problem size by roughly 60% without significantly impacting solution quality.</p>
+				
+				<h3>Lessons Learned</h3>
+				
+				<p>Looking back at this work, the computational challenges taught me valuable lessons about model formulation. The original approach with full temporal coupling was overly ambitious - sometimes the elegant mathematical formulation isn't the practical one.</p>
+				
+				<p>The project also highlighted how much insight you can gain from building something that actually works, even if it never becomes a formal publication. The interdependencies I discovered between hydrogen and ammonia systems weren't obvious from the literature - they emerged from wrestling with the optimization structure.</p>
+				
+				<p>This project demonstrates how integrating traditionally separate systems can reveal optimization opportunities that single-system analyses miss. While it never made it to publication, the mathematical framework and insights proved valuable for understanding industrial hydrogen applications more broadly.</p>
+			</div>
+		</article>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mohamed Hamdi Abdelhady, MSc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- 
+TO CREATE SIMILAR PROJECT PAGES:
+1. Copy this HTML structure  
+2. Update the title and back-link href
+3. Replace project-title and all content
+4. Add actual images by replacing the placeholder divs:
+   <img src="../images/your-image.jpg" alt="Description">
+5. Keep the same clean, simple styling
+-->
