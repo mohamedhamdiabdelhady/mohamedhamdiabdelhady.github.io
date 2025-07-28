@@ -130,10 +130,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="back-link">
-            <a href="#">← Back to Industry Analyses</a>
-        </div>
+    <div class="container">
+        <div class="back-link">
+            <a href="../thoughts.html">← Back to Thoughts</a>
+        </div>
         
         <article class="project">
             <header class="project-header">
