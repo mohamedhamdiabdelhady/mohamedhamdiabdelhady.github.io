@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mohamedhamdiabdelhady.github.io/sitemap.xml
+
+# Block access to common non-public files (optional)
+Disallow: /*.git
+Disallow: /README.md
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
