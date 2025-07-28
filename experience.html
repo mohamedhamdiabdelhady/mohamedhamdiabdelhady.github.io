@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience & Projects - Mohamed Hamdi Abdelhady</title>
+    <meta name="description" content="Professional experience and key projects in renewable energy research, wind energy assessment, and green hydrogen systems.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            background: #1e3c72;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #1e3c72;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #28a745;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        
+        .experience-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            background: white;
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            border-left: 5px solid #28a745;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 40px;
+            width: 20px;
+            height: 20px;
+            background: #28a745;
+            border-radius: 50%;
+        }
+        
+        .timeline-date {
+            color: #28a745;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            font-size: 1.4rem;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-company {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        
+        .timeline-description {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .key-contributions {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .key-contributions li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.6;
+        }
+        
+        .key-contributions li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-size: 0.9rem;
+        }
+        
+        .project-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 30px;
+        }
+        
+        .project-header h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.4rem;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .project-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .project-content {
+            padding: 30px;
+        }
+        
+        .project-scope {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .project-scope h4 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .project-outcomes {
+            margin-top: 25px;
+        }
+        
+        .project-outcomes h4 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .project-outcomes ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .project-outcomes li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .project-outcomes li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .project-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        
+        .tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .research-note {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #6f42c1;
+            text-align: center;
+        }
+        
+        .research-note h3 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .research-note h3::before {
+            content: '🔬';
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 20px;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .project-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Experience & Projects</h1>
+            <p>Professional journey and research contributions in renewable energy systems</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html" class="active">Experience</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="thoughts.html">Thoughts</a></li>
+                <li><a href="personal-projects.html">Personal Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">January 2024 – Present</div>
+                    <div class="timeline-title">PhD Research Assistant</div>
+                    <div class="timeline-company">Energy Institute – Texas A&M University, United States</div>
+                    <div class="timeline-description">Conducting doctoral research in hydrogen supply chain resilience and mathematical optimization under the supervision of leading energy systems researchers. Contributing to cutting-edge research in renewable energy integration and system optimization.</div>
+                    <ul class="key-contributions">
+                        <li>Developing advanced mathematical models for hydrogen supply chain resilience analysis</li>
+                        <li>Researching optimization algorithms for energy system planning under uncertainty</li>
+                        <li>Collaborating with industry partners on practical implementation challenges</li>
+                        <li>Contributing to peer-reviewed publications in top-tier energy journals</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 – Present</div>
+                    <div class="timeline-title">Senior Wind Resource Analyst</div>
+                    <div class="timeline-company">1500 MW Wind Project, Saudi Arabia</div>
+                    <div class="timeline-description">Leading comprehensive wind resource assessment for a large-scale renewable energy development project. Developing innovative analytical methodologies and custom tools for wind resource optimization.</div>
+                    <ul class="key-contributions">
+                        <li>Advanced wind resource assessment using state-of-the-art modeling techniques</li>
+                        <li>Development of custom analytical codes for wind data analysis and forecasting</li>
+                        <li>Early generation period assessment and performance optimization strategies</li>
+                        <li>Curtailment analysis and mitigation methodologies for grid integration</li>
+                        <li>Yield assessment and uncertainty quantification for financial modeling</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">October 2022 – January 2024</div>
+                    <div class="timeline-title">Energy Systems Analyst</div>
+                    <div class="timeline-company">Vision Grid Energy – Spain (Remote)</div>
+                    <div class="timeline-description">Conducted comprehensive renewable energy project analysis across Europe and MENA region, specializing in feasibility studies, system optimization, and regulatory compliance assessment.</div>
+                    <ul class="key-contributions">
+                        <li>Led technical analysis for 30 MW wind farm development in Los Barrios, Spain</li>
+                        <li>Optimized 80 MW grid-tied solar PV system design and integration</li>
+                        <li>Developed feasibility study for 10 MW off-grid green hydrogen production facility</li>
+                        <li>Analyzed multiple hydrogen projects with combined capacity of 40 MW</li>
+                        <li>Conducted EU ETS compliance assessments and carbon market analysis</li>
+                        <li>Supported EPC contractor evaluation and selection processes</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">August 2022 – December 2022</div>
+                    <div class="timeline-title">Wind Resource Assessment Specialist</div>
+                    <div class="timeline-company">Ministry of Electricity and Renewable Energy, Egypt</div>
+                    <div class="timeline-description">Conducted national-scale wind resource assessment study across Egypt, including pioneering offshore wind evaluation and detailed regional analysis for strategic energy planning.</div>
+                    <ul class="key-contributions">
+                        <li>Comprehensive wind potential assessment in Aswan and Wahaat regions</li>
+                        <li>First-of-its-kind offshore wind evaluation for Suez Gulf region</li>
+                        <li>Advanced WAsP modeling and validation using multiple data sources</li>
+                        <li>Uncertainty assessment and risk analysis for energy production estimates</li>
+                        <li>Economic analysis and site ranking methodology development</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2022 – September 2022</div>
+                    <div class="timeline-title">Renewable Energy Planning Specialist</div>
+                    <div class="timeline-company">DAI Global – EU Funded Project, Egypt</div>
+                    <div class="timeline-description">Contributed to major EU-funded renewable energy master planning initiative, providing technical expertise that directly influenced national energy policy and international investment decisions.</div>
+                    <ul class="key-contributions">
+                        <li>Developed multi-criteria site selection methodology for wind development</li>
+                        <li>Conducted hybrid wind-solar system optimization studies</li>
+                        <li>Analyzed capacity credit and grid integration challenges</li>
+                        <li>Performed comparative investment cost and LCOE analysis</li>
+                        <li>Created comprehensive site ranking framework for national planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="key-projects">
+        <div class="container">
+            <h2 class="section-title">Notable Projects</h2>
+            
+            <div class="project-showcase">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>10 GW Wind Development Program</h3>
+                        <div class="project-meta">
+                            <span>📍 Western Egypt</span>
+                            <span>📅 2022</span>
+                            <span>💨 Wind Energy</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <p><strong>Context:</strong> EU-funded renewable energy master planning initiative to identify optimal locations for massive wind development across Egypt's western regions.</p>
+                        
+                        <div class="project-scope">
+                            <h4>Technical Scope</h4>
+                            <p>Comprehensive wind resource mapping, multi-criteria site evaluation, technical and economic constraint analysis, and development of ranking methodology for national-scale deployment.</p>
+                        </div>
+                        
+                        <div class="project-outcomes">
+                            <h4>Key Outcomes</h4>
+                            <ul>
+                                <li>Identified sites for 10 GW wind capacity allocation</li>
+                                <li>Enabled $12 billion international investment (MASDAR & ACWA Power)</li>
+                                <li>Established methodology adopted for national renewable strategy</li>
+                                <li>Created foundation for Egypt's wind energy expansion plan</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="tag">National Planning</span>
+                            <span class="tag">Multi-Criteria Analysis</span>
+                            <span class="tag">Policy Impact</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Off-Grid Green Hydrogen System</h3>
+                        <div class="project-meta">
+                            <span>📍 Villafranca, Spain</span>
+                            <span>📅 2023</span>
+                            <span>🏭 Green Hydrogen</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <p><strong>Context:</strong> Design and optimization of a completely off-grid green hydrogen production facility powered by renewable energy and battery storage systems.</p>
+                        
+                        <div class="project-scope">
+                            <h4>Technical Scope</h4>
+                            <p>Integrated renewable energy system design, battery storage optimization, hydrogen production modeling, and comprehensive feasibility analysis for EU funding application.</p>
+                        </div>
+                        
+                        <div class="project-outcomes">
+                            <h4>Key Outcomes</h4>
+                            <ul>
+                                <li>Achieved 99.5% system availability in modeling</li>
+                                <li>Successfully submitted for EU InnovFund grant (€2M)</li>
+                                <li>Realized 15% cost reduction through system optimization</li>
+                                <li>Demonstrated complete grid independence for hydrogen production</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="tag">Off-Grid Design</span>
+                            <span class="tag">System Integration</span>
+                            <span class="tag">EU Funding</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Egyptian Power System Optimization</h3>
+                        <div class="project-meta">
+                            <span>📍 Egypt</span>
+                            <span>📅 2020-2022</span>
+                            <span>🔬 Research</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <p><strong>Context:</strong> Academic research project updating Egypt's Combined Renewable Energy Master Plan (CREMP) for high renewable penetration scenarios through 2040.</p>
+                        
+                        <div class="project-scope">
+                            <h4>Technical Scope</h4>
+                            <p>PLEXOS-based grid simulation, transmission network analysis, generation asset optimization, and long-term renewable integration planning under various scenarios.</p>
+                        </div>
+                        
+                        <div class="project-outcomes">
+                            <h4>Key Outcomes</h4>
+                            <ul>
+                                <li>Updated national renewable energy master plan methodology</li>
+                                <li>Identified optimal renewable penetration pathways</li>
+                                <li>Quantified transmission infrastructure requirements</li>
+                                <li>Published findings in peer-reviewed Energy journal</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="tag">Grid Modeling</span>
+                            <span class="tag">National Planning</span>
+                            <span class="tag">Academic Research</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Hybrid Renewable Energy Systems</h3>
+                        <div class="project-meta">
+                            <span>📍 Ras Ghareb, Egypt</span>
+                            <span>📅 2021-2023</span>
+                            <span>⚡ Hybrid Systems</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <p><strong>Context:</strong> Research on optimal configuration of dispatchable hybrid renewable energy systems combining wind, solar, and storage for baseload applications.</p>
+                        
+                        <div class="project-scope">
+                            <h4>Technical Scope</h4>
+                            <p>Artificial neural network optimization, energy storage value assessment, hybrid system configuration, and economic optimization for different operational scenarios.</p>
+                        </div>
+                        
+                        <div class="project-outcomes">
+                            <h4>Key Outcomes</h4>
+                            <ul>
+                                <li>Developed AI-based optimization methodology</li>
+                                <li>Quantified value of diurnal and seasonal storage</li>
+                                <li>Published methodology in multiple peer-reviewed journals</li>
+                                <li>Won Best Paper Award at ICESA conference</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Energy Storage</span>
+                            <span class="tag">Award Winning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="research-note">
+                <h3>Research Philosophy</h3>
+                <p>My project work is guided by the principle that effective renewable energy solutions must bridge theoretical optimization with practical implementation constraints. Each project contributes to both immediate objectives and broader understanding of energy system dynamics, ensuring that research findings can be translated into real-world applications that advance the global energy transition.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mohamed Hamdi Abdelhady, MSc. All rights reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.7;">PhD Researcher | Renewable Energy Systems | Energy Transition</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add hover effects for cards
+        document.querySelectorAll('.timeline-item, .project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.01)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add staggered animation for timeline items
+        function initTimelineAnimation() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateX(0)';
+                        }, index * 200);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-30px)';
+                item.style.transition = 'all 0.6s ease';
+                observer.observe(item);
+            });
+        }
+
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', initTimelineAnimation);
+    </script>
+</body>
+</html>

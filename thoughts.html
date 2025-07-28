@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoughts - Mohamed Hamdi Abdelhady</title>
+    <meta name="description" content="Thoughts, insights, and reflections on renewable energy, research, and the energy transition.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            background: #1e3c72;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .content {
+            background: white;
+            margin: 40px 0;
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .intro h2 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .intro p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .posts-list {
+            list-style: none;
+        }
+        
+        .post-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .post-item:last-child {
+            border-bottom: none;
+        }
+        
+        .post-date {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .post-title {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            text-decoration: none;
+            font-weight: 600;
+            line-height: 1.4;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .post-title:hover {
+            color: #28a745;
+        }
+        
+        .post-excerpt {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .content {
+                padding: 40px 25px;
+                margin: 20px 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Thoughts</h1>
+            <p>Reflections on renewable energy, research, and the energy transition</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="thoughts.html" class="active">Thoughts</a></li>
+                <li><a href="personal-projects.html">Personal Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content">
+            <div class="intro">
+                <h2>Latest Thoughts</h2>
+                <p>Ideas, insights, and reflections on renewable energy research, technology trends, and the journey toward a sustainable energy future.</p>
+            </div>
+            
+            <ul class="posts-list">
+                <li class="post-item">
+                    <div class="post-date">January 15, 2025</div>
+                    <a href="thoughts/hydrogen-supply-chain.html" class="post-title">The Hidden Complexity of Hydrogen Supply Chain Resilience</a>
+                    <p class="post-excerpt">During my PhD research, I've discovered that hydrogen supply chains face unique resilience challenges that traditional energy systems don't encounter...</p>
+                </li>
+                
+                <li class="post-item">
+                    <div class="post-date">December 28, 2024</div>
+                    <a href="thoughts/wind-curtailment.html" class="post-title">Why Wind Curtailment is Actually a Good Problem to Have</a>
+                    <p class="post-excerpt">Working on the 1500 MW Saudi wind project has given me a different perspective on curtailment. While the industry often sees it as waste...</p>
+                </li>
+                
+                <!-- 
+                TO ADD MORE THOUGHTS:
+                1. Copy the <li class="post-item"> structure above
+                2. Update the date
+                3. Create a new HTML file in "thoughts/" folder (like "thoughts/your-post.html")
+                4. Update the link href to point to your new file
+                5. Update the title and excerpt
+                6. Keep it simple!
+                -->
+                
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mohamed Hamdi Abdelhady, MSc. All rights reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.7;">PhD Researcher | Renewable Energy Systems | Energy Transition</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Hamdi Abdelhady, MSc - Renewable Energy Researcher</title>
+    <meta name="description" content="PhD researcher in renewable energy systems, hydrogen supply chains, and energy storage optimization at Texas A&M University.">
+    <meta name="keywords" content="renewable energy research, wind energy, solar PV, green hydrogen, energy storage, PhD researcher, Mohamed Hamdi">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .hero-content .tagline {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+        
+        .btn-primary:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1e3c72;
+            transform: translateY(-2px);
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            background: #1e3c72;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #1e3c72;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #28a745;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #28a745;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .research-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .research-area-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .research-area-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .research-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .research-area-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1e3c72;
+        }
+        
+        .about-section {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-content h3 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+        
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul {
+                gap: 20px;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-section {
+                padding: 40px 30px;
+            }
+            
+            .contact-info {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Mohamed Hamdi Abdelhady, MSc</h1>
+                <div class="subtitle">PhD Researcher in Renewable Energy Systems</div>
+                <div class="tagline">Advancing the science of renewable energy integration, hydrogen supply chain optimization, and sustainable energy systems through research and innovation</div>
+                <div class="cta-buttons">
+                    <a href="#about" class="btn btn-primary">Learn More</a>
+                    <a href="experience.html" class="btn btn-secondary">View Work</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="thoughts.html">Thoughts</a></li>
+                <li><a href="personal-projects.html">Personal Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="overview">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">20+</span>
+                    <div class="stat-label">GW of Renewable Energy Projects</div>
+                </div>
+				<div class="stat-card">
+                    <span class="stat-number">20+</span>
+                    <div class="stat-label">GWh of Energy Storage Projects</div>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number">5+</span>
+                    <div class="stat-label">GW of P2X projects</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">6</span>
+                    <div class="stat-label">Peer-Reviewed Publications</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">6+</span>
+                    <div class="stat-label">Countries & Regions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-content">
+                    <h3>About My Work</h3>
+                    <p>I'm currently pursuing my PhD at Texas A&M University, where I focus on optimization of energy systems and supply chains. My research bridges the gap between theoretical modeling and practical implementation in renewable energy integration.</p>
+                    <p>With experience spanning from national-scale wind resource assessments in Egypt to off-grid hydrogen production systems in Spain, I work at the intersection of renewable energy technology, policy, and economic optimization.</p>
+                    <p>My goal is to contribute to the global energy transition through rigorous research, innovative modeling approaches, and practical solutions that can be implemented at scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research-areas">
+        <div class="container">
+            <h2 class="section-title">Research Areas</h2>
+            
+            <div class="research-areas-grid">
+                <div class="research-area-card">
+                    <div class="research-icon">🌪️</div>
+                    <h3>Wind Energy Systems</h3>
+					<p>I specialize in advanced wind resource assessment, turbine micrositing optimization, and large-scale wind farm integration. In my most recent role, I served as a senior wind resource analyst for 1,500 MW wind energy projects in Saudi Arabia.</p>                
+				</div>
+                
+                <div class="research-area-card">
+                    <div class="research-icon">📊</div>
+                    <h3>Hydrogen Supply Chains</h3>
+                    <p>PhD research focus on resilience modeling and optimization of green hydrogen production, storage, and distribution networks. Mathematical modeling of supply chain disruptions and recovery strategies.</p>
+                </div>
+                
+                <div class="research-area-card">
+                    <div class="research-icon">⚡</div>
+                    <h3>Energy Storage Systems</h3>
+                    <p>Battery energy storage system optimization, grid services modeling, and hybrid renewable-storage system design. Research on diurnal and seasonal storage value in high-renewable scenarios.</p>
+                </div>
+                
+                <div class="research-area-card">
+                    <div class="research-icon">☀️</div>
+                    <h3>Solar Energy Integration</h3>
+                    <p>Grid-scale solar PV system modeling, performance optimization, and economic analysis. Research on utility-scale solar integration with energy storage systems.</p>
+                </div>
+                
+                <div class="research-area-card">
+                    <div class="research-icon">⚡</div>
+                    <h3>Energy System Modeling</h3>
+                    <p>Advanced mathematical modeling using PLEXOS, MATLAB, and optimization algorithms. Research on long-term energy planning under high renewable penetration scenarios.</p>
+                </div>
+                
+                <div class="research-area-card">
+                    <div class="research-icon">📊</div>
+                    <h3>Energy Economics</h3>
+                    <p>Techno-economic analysis of renewable energy systems, LCOE optimization, and energy market modeling. Research on carbon pricing mechanisms and decarbonization strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>Interested in collaboration, research discussions, or learning more about my work? I'm always open to connecting with fellow researchers, industry professionals, and students.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            mohamedhamdi4474@gmail.com
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <strong>LinkedIn</strong><br>
+                            linkedin.com/in/engmohamedhamdi
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🎓</div>
+                        <div>
+                            <strong>Institution</strong><br>
+                            Texas A&M University
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mohamed Hamdi Abdelhady, MSc. All rights reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.7;">PhD Researcher | Renewable Energy Systems | Energy Transition</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate stats on scroll
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const finalValue = target.textContent;
+                        let currentValue = 0;
+                        const increment = finalValue.includes('+') ? 
+                            parseInt(finalValue.replace('+', '')) / 50 : 
+                            parseInt(finalValue) / 50;
+                        
+                        const timer = setInterval(() => {
+                            currentValue += increment;
+                            if (currentValue >= parseInt(finalValue.replace('+', ''))) {
+                                target.textContent = finalValue;
+                                clearInterval(timer);
+                            } else {
+                                target.textContent = Math.floor(currentValue) + (finalValue.includes('+') ? '+' : '');
+                            }
+                        }, 30);
+                        
+                        observer.unobserve(target);
+                    }
+                });
+            });
+            
+            stats.forEach(stat => observer.observe(stat));
+        }
+        
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', animateStats);
+        
+        // Add hover effects for cards
+        document.querySelectorAll('.research-area-card, .stat-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
